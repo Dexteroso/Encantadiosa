@@ -16,6 +16,7 @@ body {
 
 
 .numberinput,
+.messageinput,
 .buttonarea {
     display: flex;
     flex-direction: column;
@@ -24,17 +25,24 @@ body {
     align-items: center;
 }
 
-.numberinputlabel {
+.numberinputlabel,
+.messageinputlabel {
     display: flex;
     flex-direction: column;
     gap: 5px;
     color: #6c6c6c;
 }
 
-#contactnumber {
+#contactnumber,
+#message {
     border: 1px solid #d4af37;
     border-radius: 15px;
     padding: 5px 15px;
+}
+
+#message {
+    width: 250px;
+
 }
 
 #contactnumber:focus {

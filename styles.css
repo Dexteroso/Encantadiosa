@@ -1,0 +1,67 @@
+body {
+    width: 80vw;
+    margin: 30px auto;
+    background-color: #fff;
+    font-size: 15px;
+}
+
+.inputarea {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    box-shadow: 4px 4px 10px #c4c4c4;
+    border-radius: 15px;
+}
+
+
+.numberinput,
+.buttonarea {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    gap: 20px;
+    align-items: center;
+}
+
+.numberinputlabel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #525353;
+}
+
+#contactnumber {
+    border: 1px solid #11A9CC;
+    border-radius: 15px;
+    padding: 5px 15px;
+}
+
+#contactnumber:focus {
+    outline: none;
+    border-color: #11A9CC;
+    box-shadow: 0 0 0 1px #11A9CC;
+}
+
+#contactnumber:hover {
+    border-color: #11A9CC;
+}
+
+
+.buttonarea a {
+    background-color: #11A9CC;
+    padding: 5px 20px;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.buttonarea p {
+    margin: 0;
+    text-align: center;
+    color: #525353;
+}
+
+.buttonarea p span {
+    font-weight: 600;
+}

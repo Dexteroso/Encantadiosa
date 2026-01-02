@@ -66,3 +66,5 @@ class Persona2 {
 
 const persona3 = new Persona2("Angel",45);
 console.log(persona3.resumenPersona());
+
+

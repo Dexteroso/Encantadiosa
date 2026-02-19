@@ -7,6 +7,8 @@
     <title>WhatsApp Launcher</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/comment.png" type="image/png">
+     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 
 <body>
@@ -17,25 +19,69 @@
                 <input id="contactnumber" type="text">
             </div>
         </div>
-        <div class="messageinput">
+        <!-- <div class="messageinput">
             <div class="messageinputlabel"><label for="">Mensaje</label>
-                <!-- <input id="message" type="text"> -->
                 <textarea name="message" id="message"></textarea>
             </div>
-        </div>
-        <div class="buttonarea">
+        </div> -->
+        <div class="buttonstyle">
             <a id="ContactButton" href="#" target="_blank">Iniciar Chat</a>
-            <p><span>Agrega esta nota al pedido:</span><br>Se envió mensaje de Carrito Abandonado</p>
         </div>
-        <div class="buttonarea">
-            <a id="ContactButton" href="https://mydhl.express.dhl/mx/es/schedule-pickup.html#/schedule-pickup#label-reference" target="_blank">Programar Recolección</a>
+        <div class="cart_style">
+            <p class="cart_style_title">Agrega esta nota al pedido:</p>
+            <div class="cart_button">
+                <p id="orderNote">Se envió mensaje de Carrito Abandonado</p>
+                <button id="copyButton" aria-label="Copiar nota" title="Copiar nota"><i class='bx bx-copy-alt'></i></button>
+            </div>
+        </div>
+        <div class="buttonstyle">
+            <a id="ContactButton"
+                href="https://mydhl.express.dhl/mx/es/schedule-pickup.html#/schedule-pickup#label-reference"
+                target="_blank">Programar Recolección</a>
         </div>
     </div>
     <!-- <script src="practice.js"></script> -->
     <script src="followup.js"></script>
-     <!-- <script src="funcionflecha.js"></script> -->
-    
+    <!-- <script src="funcionflecha.js"></script> -->
 
+    <script>
+        const copyButton = document.getElementById("copyButton");
+        const orderNote = document.getElementById("orderNote");
+
+        copyButton.addEventListener("click", () => {
+            const textToCopy = orderNote.innerText;
+            navigator.clipboard.writeText(textToCopy)
+                .then(() => showToast("Nota copiada ✅"))
+                .catch(() => showToast("Error al copiar ❌"));
+        });
+
+        function showToast(message) {
+            let toast = document.getElementById("toast");
+
+            if (!toast) {
+                toast = document.createElement("div");
+                toast.id = "toast";
+                document.body.appendChild(toast);
+            }
+
+            toast.textContent = message;
+            toast.style.position = "fixed";
+            toast.style.bottom = "200px";
+            toast.style.left = "50%";
+            toast.style.transform = "translateX(-50%)";
+            toast.style.background = "#eef0f1";
+            toast.style.color = "#333";
+            toast.style.padding = "5px 15px";
+            toast.style.borderRadius = "8px";
+            toast.style.fontSize = "14px";
+            toast.style.opacity = "1";
+            toast.style.transition = "opacity 0.3s ease";
+
+            setTimeout(() => {
+                toast.style.opacity = "0";
+            }, 10000);
+        }
+    </script>
 </body>
 
 </html>

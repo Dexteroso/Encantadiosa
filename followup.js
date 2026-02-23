@@ -19,5 +19,6 @@ function updateWhatsAppLink() {
   const encodedMessage = encodeURIComponent(messageContent.value);
 
   contactButton.href =
-       `https://web.whatsapp.com/send?phone=52${cleanedNumber}&text=${encodedMessage}`;
+    //  `https://web.whatsapp.com/send?phone=52${cleanedNumber}&text=${encodedMessage}`;
+    `https://wa.me/52${cleanedNumber}?text=${encodedMessage}`;
 }
